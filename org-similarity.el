@@ -47,7 +47,7 @@
 
 (defvar org-similarity-directory org-directory)
 
-(defvar org-similarity-show-scores nil)
+(defvar org-similarity-show-scores 1)
 
 (defvar org-similarity-root
   (concat (file-name-directory

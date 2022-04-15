@@ -147,18 +147,18 @@ def main():
         i = pair[0]
         similar_score = pair[1]
         similar_title = open(target_filenames[i], "r").readline()
-        similar_title = similar_title.replace("#+TITLE: ", "")[:-1]  # strip \n
+        similar_title = similar_title.replace("#+title: ", "")[:-1]  # strip \n
         # org-mode links use relative rather than absolute paths
         # similar_filename = target_filenames[i].replace(directory, "")
         similar_filename = os.path.relpath(target_filenames[i],
                                            os.path.dirname(input_filename))
-        if show_score:
-            message = "{:.2f} [[file:{}][{}]]".format(similar_score,
+#        if show_score:
+        message = "{:.2f} [[file:{}][{}]]".format(similar_score,
                                                       similar_filename,
                                                       similar_title)
-        else:
-            message = "[[file:{}][{}]]".format(similar_filename,
-                                               similar_title)
+#       else:
+#            message = "[[file:{}][{}]]".format(similar_filename,
+#                                               similar_title)
         print(message)
 
 
